@@ -21,13 +21,14 @@ const refs = {
 refs.toggle.addEventListener('change', changeThemeInGallery);
 
 function changeThemeInGallery(e) {
+    
+        
     if (e.target.checked) {
         refs.body.classList.add(Theme.DARK);
         refs.body.classList.remove(Theme.LIGHT);
         window.localStorage.setItem(THEME_KEY, Theme.DARK);
         window.localStorage.setItem(TOGGLE_KEY, 'true');
-        e.currentTarget.reset();
-        
+       
     } else {
         refs.body.classList.add(Theme.LIGHT);
         refs.body.classList.remove(Theme.DARK);
