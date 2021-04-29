@@ -2,6 +2,8 @@ const Theme = {
   LIGHT: 'light-theme',
   DARK: 'dark-theme',
 };
+const THEME_KEY = 'theme';
+const TOGGLE_KEY = 'toggle';
 
 const refs = {
     toggle: document.querySelector('#theme-switch-toggle'),
@@ -13,9 +15,6 @@ const storageToggle = window.localStorage.getItem(TOGGLE_KEY);
 
 refs.body.classList.add(storageTheme);
 refs.toggle.checked = storageToggle;
-
-const THEME_KEY = 'theme';
-const TOGGLE_KEY = 'toggle';
 
 refs.toggle.addEventListener('change', changeThemeInGallery);
 
