@@ -3,20 +3,19 @@ const Theme = {
   DARK: 'dark-theme',
 };
 
-const THEME_KEY = 'theme';
-const TOGGLE_KEY = 'toggle';
-
 const refs = {
     toggle: document.querySelector('#theme-switch-toggle'),
     body: document.querySelector('body'),
 }
 
-    const storageTheme = window.localStorage.getItem(THEME_KEY);
-    const storageToggle = window.localStorage.getItem(TOGGLE_KEY);
+const storageTheme = window.localStorage.getItem(THEME_KEY);
+const storageToggle = window.localStorage.getItem(TOGGLE_KEY);
 
-    refs.body.classList.add(storageTheme);
-    refs.toggle.checked = storageToggle;
+refs.body.classList.add(storageTheme);
+refs.toggle.checked = storageToggle;
 
+const THEME_KEY = 'theme';
+const TOGGLE_KEY = 'toggle';
 
 refs.toggle.addEventListener('change', changeThemeInGallery);
 
@@ -35,7 +34,6 @@ function changeThemeInGallery(e) {
         window.localStorage.setItem(THEME_KEY, Theme.LIGHT);
         window.localStorage.removeItem(TOGGLE_KEY);
     }
-
 };
 
     
